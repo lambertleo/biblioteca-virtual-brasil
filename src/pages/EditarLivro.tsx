@@ -24,7 +24,7 @@ const EditarLivro = () => {
     autor: "Machado de Assis",
     genero: "Romance",
     anoPublicacao: "1899",
-    sinopse: "Dom Casmurro é um romance escrito por Machado de Assis, publicado em 1899 pela Livraria Garnier. É narrado em primeira pessoa por Bento Santiago, que, na velhice, decide escrever um livro para "atar as duas pontas da vida". No livro, Bentinho conta a história de seu amor por Capitu, desde a infância até a idade adulta, culminando em uma suspeita de traição que o acompanhará pelo resto da vida."
+    sinopse: "Dom Casmurro é um romance escrito por Machado de Assis, publicado em 1899 pela Livraria Garnier. É narrado em primeira pessoa por Bento Santiago, que, na velhice, decide escrever um livro para \"atar as duas pontas da vida\". No livro, Bentinho conta a história de seu amor por Capitu, desde a infância até a idade adulta, culminando em uma suspeita de traição que o acompanhará pelo resto da vida."
   };
 
   const form = useForm<ValoresFormulario>({
