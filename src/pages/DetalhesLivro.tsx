@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Edit } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
 const DetalhesLivro = () => {
+  const navigate = useNavigate();
   const [isBorrowed, setIsBorrowed] = useState(false);
 
   const handleBorrow = () => {
@@ -17,7 +19,7 @@ const DetalhesLivro = () => {
   };
 
   const handleEdit = () => {
-    toast.success("Redirecionando para edição...");
+    navigate("/editar-livro");
   };
 
   return (
