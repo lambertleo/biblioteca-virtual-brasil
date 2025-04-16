@@ -1,7 +1,25 @@
-
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { BookOpen, Edit } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const DetalhesLivro = () => {
+  const [isBorrowed, setIsBorrowed] = useState(false);
+
+  const handleBorrow = () => {
+    setIsBorrowed(!isBorrowed);
+    if (!isBorrowed) {
+      toast.success("Livro emprestado com sucesso!");
+    } else {
+      toast.success("Livro devolvido com sucesso!");
+    }
+  };
+
+  const handleEdit = () => {
+    toast.success("Redirecionando para edição...");
+  };
+
   return (
     <div>
       {/* Cabeçalho */}
@@ -38,7 +56,7 @@ const DetalhesLivro = () => {
               <p><strong>Autor:</strong> Machado de Assis</p>
               <p><strong>Gênero:</strong> <span className="etiqueta-genero">Romance</span></p>
               <p><strong>Ano de Publicação:</strong> 1899</p>
-              <p><strong>Status:</strong> Disponível</p>
+              <p><strong>Status:</strong> {isBorrowed ? "Emprestado" : "Disponível"}</p>
             </div>
             
             <div className="descricao-livro">
@@ -48,8 +66,22 @@ const DetalhesLivro = () => {
             </div>
             
             <div className="acoes-livro">
-              <button className="botao botao-secundario">Marcar como Lido</button>
-              <button className="botao">Editar Informações</button>
+              <Button 
+                variant="outline" 
+                onClick={handleBorrow}
+                className="flex items-center gap-2"
+              >
+                <BookOpen className="w-4 h-4" />
+                {isBorrowed ? "Devolver Livro" : "Emprestar Livro"}
+              </Button>
+              
+              <Button 
+                onClick={handleEdit}
+                className="flex items-center gap-2"
+              >
+                <Edit className="w-4 h-4" />
+                Editar Informações
+              </Button>
             </div>
           </div>
         </section>
