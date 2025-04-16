@@ -1,9 +1,6 @@
-
 import { Link } from "react-router-dom";
-
 const Index = () => {
-  return (
-    <div>
+  return <div>
       {/* Cabeçalho */}
       <header className="cabecalho">
         <div className="container cabecalho-conteudo">
@@ -23,7 +20,7 @@ const Index = () => {
       {/* Banner */}
       <section className="banner">
         <div className="container">
-          <h1>Biblioteca Virtual Brasil</h1>
+          <h1>Biblioteca Virtual FAE</h1>
           <p>Explore nossa coleção de livros e descubra novos autores, gêneros e histórias fascinantes.</p>
         </div>
       </section>
@@ -167,8 +164,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
